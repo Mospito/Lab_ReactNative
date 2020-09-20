@@ -19,15 +19,18 @@ const styles = StyleSheet.create({
 
     textstyle:{
       fontSize:35,
-      color:'white'  
+      color:'white',
+      padding:20,
     },
     textdes:{
         fontSize:30,
-        color:'white'
+        color:'white',
+        padding:20,
     },
     texttmp:{
         fontSize:20,
-        color:'white'
+        color:'white',
+        padding:20,
     },
     crop:{
         alignItems:'center',

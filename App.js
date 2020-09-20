@@ -26,17 +26,25 @@
 
 
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { StyleSheet,Text,View } from 'react-native';
+import { NavigationContainer,DefaultTheme, } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ZipCodeScreen from './component/ZipCodeScreen';
 import WeatherScreen from './component/WeatherScreen';
 
 const Stack = createStackNavigator();
 
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'rgb(235, 197, 196)',
+  },
+};
+
 export default function App() {
   return (        
-    <NavigationContainer>
+    <NavigationContainer theme={MyTheme}>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={ZipCodeScreen} />
         <Stack.Screen name="Weather" component={WeatherScreen} />
@@ -45,3 +53,13 @@ export default function App() {
   );
 }
 
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      paddingTop:22,
+      backgroundColor:'red'
+      // borderColor:'red',
+      // borderWidth:'red',
+      
+    }
+});

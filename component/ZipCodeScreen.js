@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, FlatList,TouchableHighlight} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, FlatList,TouchableHighlight,StyleSheet,ImageBackground} from 'react-native';
+import { useNavigation,useTheme, } from '@react-navigation/native';
 
 
 
@@ -14,14 +14,15 @@ const availableZipItems = [
 ]
 
 const ZipItem = ({ place, code, navigation }) => (
-    <TouchableHighlight onPress={() => navigation.navigate('Weather', { zipCode: code })}>
-            <View>
-                <Text>{place}</Text>
-                <Text>{code}</Text>
-            </View>
+    <TouchableHighlight   activeOpacity={1} underlayColor= "red"     onPress={() => navigation.navigate('Weather', { zipCode: code })}>
+           
+         <View style={styles.fontPattle}> 
+             <Text style={styles.textStart}>{place}</Text> 
+             <Text style={styles.textEnd}>{code}</Text>
+        </View>
+           
     </TouchableHighlight>
 )
-
 
 const _keyExtractor = item => item.code
 
@@ -30,13 +31,52 @@ export default function ZipCodeScreen() {
     
     return (
         <View>
-            <FlatList
-                data={availableZipItems}
-                keyExtractor={_keyExtractor}
-                renderItem={({ item }) => <ZipItem {...item} navigation={navigation} />}
-            />
-            <StatusBar style="auto" />
+            <ImageBackground source={require('../catbod.jpg')} style={styles.BG}>
+                <FlatList style={styles.crop}
+                    data={availableZipItems}
+                    keyExtractor={_keyExtractor}
+                    renderItem={({ item }) => <ZipItem {...item} navigation={navigation} />}
+                />
+                <StatusBar style="auto" />
+            </ImageBackground>
+            
         </View>
     );
 
 }
+
+const styles = StyleSheet.create({
+    crop:{
+        
+        backgroundColor:'black',
+        opacity:0.5,  
+    },
+    BG:{
+        
+        width:'100%',
+        height:'100%'
+        
+    },
+    fontPattle:{
+      color:'white',
+      padding:10,
+      display:'flex',
+      flexDirection:'row',
+      justifyContent:'space-between',
+      paddingTop:70,
+      paddingLeft:40,
+      paddingRight:40,
+    },
+    textStart:{
+        alignItems:'flex-start',
+        color:'#f1c5c4',
+        fontSize:25,
+    },
+    textEnd:{
+        alignItems:'flex-end',
+        color:'#c49770',
+        fontSize:25,
+        
+    },
+
+});
