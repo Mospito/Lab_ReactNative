@@ -58,14 +58,12 @@ const styles = StyleSheet.create({
         
     },
     fontPattle:{
-      color:'white',
-      padding:10,
-      display:'flex',
-      flexDirection:'row',
-      justifyContent:'space-between',
-      paddingTop:70,
-      paddingLeft:40,
-      paddingRight:40,
+        color:'white',
+        padding:10,
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        margin:30,
     },
     textStart:{
         alignItems:'flex-start',
