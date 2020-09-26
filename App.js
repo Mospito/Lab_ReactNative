@@ -31,6 +31,7 @@ import { NavigationContainer,DefaultTheme, } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ZipCodeScreen from './component/ZipCodeScreen';
 import WeatherScreen from './component/WeatherScreen';
+import AboutMeScreen from './component/AboutMeScreen';
 
 const Stack = createStackNavigator();
 
@@ -48,6 +49,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={ZipCodeScreen} />
         <Stack.Screen name="Weather" component={WeatherScreen} />
+        <Stack.Screen name="AboutMe" component={AboutMeScreen}/>
       </Stack.Navigator> 
     </NavigationContainer>       
   );

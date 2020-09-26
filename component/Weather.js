@@ -1,6 +1,8 @@
 import React, { useState,useEffect } from 'react';
 import { View, Text, ImageBackground, StyleSheet } from 'react-native';
 import Forecast from './Forecast';
+// import moment from 'moment'
+
 
 const apiKey = '6cecb9dd2e369d7e9b5d62bc682150d4'
 
@@ -30,8 +32,10 @@ export default function Weather(props) {
                    });
            }
        }, [props.zipCode])
-   
+       
 
+   
+    //    const date =  moment().format('LTS');
     return (
         <View>
             <ImageBackground source={require('../catbod2.jpg')} style={styles.backdrop}>
@@ -39,6 +43,8 @@ export default function Weather(props) {
                     <View style={styles.cover}>
                         <Text style={styles.textcolor}>Zip Code is {props.zipCode}</Text>
                         <Forecast {...forecastInfo} />
+                      
+                         
                     </View>
                     
                

@@ -1,7 +1,10 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, FlatList,TouchableHighlight,StyleSheet,ImageBackground} from 'react-native';
+import { View, Text, FlatList,TouchableHighlight,StyleSheet,ImageBackground,Platform, Linking} from 'react-native';
 import { useNavigation,useTheme, } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+
 
 
 
@@ -25,18 +28,28 @@ const ZipItem = ({ place, code, navigation }) => (
 )
 
 const _keyExtractor = item => item.code
-
+const URLFB = "https://web.facebook.com/jaturon.muljan"
 export default function ZipCodeScreen() {
     const navigation = useNavigation()
+    
     
     return (
         <View>
             <ImageBackground source={require('../catbod.jpg')} style={styles.BG}>
+              
                 <FlatList style={styles.crop}
                     data={availableZipItems}
                     keyExtractor={_keyExtractor}
-                    renderItem={({ item }) => <ZipItem {...item} navigation={navigation} />}
+                    renderItem={({ item }) => <ZipItem {...item} navigation={navigation} />} 
                 />
+                
+                <Icon.Button 
+                    name="facebook"
+                    backgroundColor="#3b5998"
+                    onPress={() => navigation.navigate('AboutMe')}>
+                    AboutMe
+                </Icon.Button>
+                
                 <StatusBar style="auto" />
             </ImageBackground>
             
