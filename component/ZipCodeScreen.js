@@ -44,10 +44,10 @@ export default function ZipCodeScreen() {
                 />
                 
                 <Icon.Button 
-                    name="facebook"
-                    backgroundColor="#3b5998"
+                    name="user"
+                    backgroundColor="#5E5D5E"
                     onPress={() => navigation.navigate('AboutMe')}>
-                    AboutMe
+                    AboutMe Touch Here!!
                 </Icon.Button>
                 
                 <StatusBar style="auto" />

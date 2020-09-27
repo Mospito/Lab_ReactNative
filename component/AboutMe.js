@@ -1,10 +1,10 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import IconMD from 'react-native-vector-icons/Fontisto';
-//Import For Buttom OpenURL
 import { useCallback } from "react";
-import { Alert, Button, Linking, View } from "react-native";
+import { Alert, Button, Linking, View, ImageBackground, StyleSheet } from "react-native";
 import { useNavigation, useTheme, } from '@react-navigation/native';
+import TextTicker from 'react-native-text-ticker'
 
 const supportedURL = "https://google.com";
 const unsupportedURL = "slack://open?team=123456";
@@ -33,23 +33,37 @@ export default function AboutMe() {
 
 
     <View>
-      <OpenURLButton url={supportedURL}>Open Supported URL</OpenURLButton>
-      <OpenURLButton url={unsupportedURL}>Open Unsupported URL</OpenURLButton>
-      <Icon.Button name="facebook" backgroundColor="#3b5998" onPress={() => navigation.navigate('FacebookPage')}>
-        Facebook
-      </Icon.Button>
+      <ImageBackground source={require('../jack.jpg')} style={styles.blackdrop}>
+        <View style={styles.setItem}>
+          {/* <OpenURLButton url={supportedURL}>Open Supported URL</OpenURLButton>
+          <OpenURLButton url={unsupportedURL}>Open Unsupported URL</OpenURLButton> */}
+          <Icon.Button name="facebook" backgroundColor="#3b5998" onPress={() => navigation.navigate('FacebookPage')}>
+            Facebook
+          </Icon.Button>
 
-      <IconMD.Button  name="medium" backgroundColor="black" onPress={() => navigation.navigate('MediumPage')}>
-        Medium
-      </IconMD.Button>
+          <IconMD.Button name="medium" backgroundColor="black" onPress={() => navigation.navigate('MediumPage')}>
+            Medium
+          </IconMD.Button>
 
-      <IconMD.Button  name="youtube-play" backgroundColor="red" onPress={() => navigation.navigate('YoutubePage')}>
-        Youtube
-      </IconMD.Button>
+          <IconMD.Button name="youtube-play" backgroundColor="red" onPress={() => navigation.navigate('YoutubePage')}>
+            Youtube
+          </IconMD.Button>
 
-      <IconMD.Button name="github" backgroundColor="black" onPress={() => navigation.navigate('GithubPage')}>
-        Github
-      </IconMD.Button>
+          <IconMD.Button name="github" backgroundColor="black" onPress={() => navigation.navigate('GithubPage')}>
+            Github
+          </IconMD.Button>
+          <TextTicker
+            style={{ fontSize: 24 ,color:'white'}}
+            duration={3000}
+            loop
+            bounce
+            repeatSpacer={50}
+            marqueeDelay={1000}
+          >
+            6135512026 Jaturon Moonjan CoE 3 
+          </TextTicker>
+        </View>
+      </ImageBackground>
     </View>
 
 
@@ -58,3 +72,24 @@ export default function AboutMe() {
 
 
 }
+
+const styles = StyleSheet.create({
+
+  blackdrop: {
+    width: '100%',
+    height: '100%',
+
+
+  },
+  setItem: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    opacity: 0.6,
+
+  },
+
+
+
+
+});
