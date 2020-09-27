@@ -10,7 +10,8 @@
             backgroundColor="#5E5D5E"
             onPress={() => navigation.navigate('AboutMe')}>
             AboutMe Touch Here!!
-</Icon.Button> ```
+</Icon.Button> 
+```
 
 # วิธีการนำ TextTicker มาใช้งาน
 - ให้เราติดตั้งโดยใช้คำสั่ง yarn add react-native-text-ticker
