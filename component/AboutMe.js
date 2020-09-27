@@ -43,7 +43,7 @@ export default function AboutMe() {
         Medium
       </IconMD.Button>
 
-      <IconMD.Button  name="youtube-play" backgroundColor="red" onPress={() => navigation.navigate()}>
+      <IconMD.Button  name="youtube-play" backgroundColor="red" onPress={() => navigation.navigate('YoutubePage')}>
         Youtube
       </IconMD.Button>
     </View>
