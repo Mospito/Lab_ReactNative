@@ -32,6 +32,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import ZipCodeScreen from './component/ZipCodeScreen';
 import WeatherScreen from './component/WeatherScreen';
 import AboutMeScreen from './component/AboutMeScreen';
+import FacebookPage from './component/FacebookPage';
 
 const Stack = createStackNavigator();
 
@@ -50,6 +51,7 @@ export default function App() {
         <Stack.Screen name="Home" component={ZipCodeScreen} />
         <Stack.Screen name="Weather" component={WeatherScreen} />
         <Stack.Screen name="AboutMe" component={AboutMeScreen}/>
+        <Stack.Screen name="FacebookPage" component={FacebookPage}/>
       </Stack.Navigator> 
     </NavigationContainer>       
   );
