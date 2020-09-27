@@ -18,6 +18,7 @@
 - ให้เราติดตั้งโดยใช้คำสั่ง yarn add react-native-text-ticker
 - ให้ทำการ import มาใช้งาน 
 ``` import TextTicker from 'react-native-text-ticker'; ```
+- ศึกษาเพิ่มเติมได้ที่ https://www.npmjs.com/package/react-native-text-ticker
 - ตัวอย่างการเขียนโปรแกรม
 ``` 
 <TextTicker
@@ -29,6 +30,20 @@
      marqueeDelay={1000}>
 
      6135512026 Jaturon Moonjan CoE 3
-      
+
 </TextTicker>
 ``` 
+# วิธีการทำให้เปิด Link แล้ว Link ไม่เด้งไปหน้า Browser
+- ติดตั้งโดยการ yarn add react-native-webview
+- ทำการ import เข้ามา
+```
+import { WebView } from 'react-native-webview'
+```
+- ตัวอย่างCodeการเขียนหน้า FacebookPage
+```
+export default function FacebookPage() {
+    return (
+        <WebView source={{uri: 'https://web.facebook.com/jaturon.muljan'}}/>
+        )
+}
+```
