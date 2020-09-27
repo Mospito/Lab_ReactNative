@@ -53,7 +53,7 @@ export default function AboutMe() {
             Github
           </IconMD.Button>
           <TextTicker
-            style={{ fontSize: 24 ,color:'white'}}
+            style={{ fontSize: 24 ,color:'white',paddingTop: 300,}}
             duration={3000}
             loop
             bounce
