@@ -35,6 +35,7 @@ import AboutMeScreen from './component/AboutMeScreen';
 import FacebookPage from './component/FacebookPage';
 import MediumPage from './component/MediumPage';
 import YoutubePage from './component/YoutubePage';
+import GithubPage from './component/GithubPage';
 
 const Stack = createStackNavigator();
 
@@ -56,6 +57,7 @@ export default function App() {
         <Stack.Screen name="FacebookPage" component={FacebookPage}/>
         <Stack.Screen name="MediumPage" component={MediumPage}/>
         <Stack.Screen name="YoutubePage" component={YoutubePage}/>
+        <Stack.Screen name="GithubPage" component={GithubPage}/>
       </Stack.Navigator> 
     </NavigationContainer>       
   );

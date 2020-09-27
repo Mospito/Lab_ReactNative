@@ -46,6 +46,10 @@ export default function AboutMe() {
       <IconMD.Button  name="youtube-play" backgroundColor="red" onPress={() => navigation.navigate('YoutubePage')}>
         Youtube
       </IconMD.Button>
+
+      <IconMD.Button name="github" backgroundColor="black" onPress={() => navigation.navigate('GithubPage')}>
+        Github
+      </IconMD.Button>
     </View>
 
 
