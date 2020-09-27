@@ -39,7 +39,7 @@ export default function AboutMe() {
         Facebook
       </Icon.Button>
 
-      <IconMD.Button  name="medium" backgroundColor="black" onPress={() => navigation.navigate()}>
+      <IconMD.Button  name="medium" backgroundColor="black" onPress={() => navigation.navigate('MediumPage')}>
         Medium
       </IconMD.Button>
 
